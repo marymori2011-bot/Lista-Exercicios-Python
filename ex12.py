@@ -1,39 +1,20 @@
-def somar(a, b):
-    return a + b
+def is_primo(n):
 
-def subtrair(a, b):
-    return a - b
+    if n < 2:
+        return False
 
-def multiplicar(a, b):
-    return a * b
+    for i in range(2, n):
 
-def dividir(a, b):
-    return a / b
+        if n % i == 0:
+            return False
+
+    return True
 
 
-print("1 - Somar")
-print("2 - Subtrair")
-print("3 - Multiplicar")
-print("4 - Dividir")
-print("0 - Sair")
+numero = int(input("Digite um número: "))
 
-opcao = int(input("Escolha: "))
-
-if opcao != 0:
-    a = float(input("Primeiro número: "))
-    b = float(input("Segundo número: "))
-
-    if opcao == 1:
-        print(somar(a, b))
-
-    elif opcao == 2:
-        print(subtrair(a, b))
-
-    elif opcao == 3:
-        print(multiplicar(a, b))
-
-    elif opcao == 4:
-        if b != 0:
-            print(dividir(a, b))
-        else:
-            print("Não é possível dividir por zero")
+if is_primo(numero):
+    print(f"{numero} é primo.")
+else:
+    print(f"{numero} não é primo.")
+    
